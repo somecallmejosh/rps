@@ -15,17 +15,18 @@
 
 <style>
 header {
-  border: #fff 1px solid;
-  border-radius: 2rem;
+  border: var(--header-outline) 0.2rem solid;
+  border-radius: var(--border-radius);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 2.3rem;
 }
 h1 {
-  max-width: 100px;
+  max-width: 5rem;
+  line-height: 0.8;
 }
 .score-board {
-  border-radius: 12px;
+  border-radius: var(--border-radius);
   background-color: #fff;
   margin-left: auto;
   text-align: center;

@@ -12,6 +12,7 @@ import Rock from "~/components/icons/Rock.vue";
 import Scissors from "~/components/icons/Scissors.vue";
 export default {
   components: { Paper, Rock, Scissors },
+
   props: {
     state: {
       type: String
@@ -35,7 +36,7 @@ button {
   border: 0;
   box-shadow: inset 0 5px 0 #ccc;
   cursor: pointer;
-  display: block;
+  display: inline-flex;
   height: 8rem;
   justify-content: center;
   position: relative;
@@ -51,7 +52,8 @@ button svg {
   fill: #3b4262;
 }
 
-button::after {
+button::after,
+button::before {
   border-radius: 100%;
   content: " ";
   display: block;
@@ -91,5 +93,9 @@ button[disabled]::after {
 
 button[disabled] svg {
   fill: #8a8fac;
+}
+
+button.mySelection::before {
+  box-shadow: 0 0 0 28px #2b3a59, 0 0 0 56px #263554, 0 0 0 80px #202f4e;
 }
 </style>

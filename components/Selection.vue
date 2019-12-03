@@ -29,19 +29,19 @@ export default {
 
 <style scoped>
 button {
-  align-content: center;
+  align-items: center;
   appearance: none;
   background: #fff;
   border-radius: 100%;
   border: 0;
-  box-shadow: inset 0 5px 0 #ccc;
+  box-shadow: inset 0 6px 0 #ccc;
   cursor: pointer;
   display: inline-flex;
-  height: 8rem;
+  height: 7rem;
   justify-content: center;
   position: relative;
   transition: background-color 0.2s;
-  width: 8rem;
+  width: 7rem;
 }
 
 button:hover {
@@ -57,27 +57,28 @@ button::before {
   border-radius: 100%;
   content: " ";
   display: block;
-  height: 10rem;
+  height: 9rem;
   left: -1rem;
   position: absolute;
   top: -1rem;
-  width: 10rem;
+  width: 9rem;
   z-index: -1;
+  box-shadow: 2px 5px 5px black;
 }
 
 button.paper::after {
   background-color: hsl(230, 89%, 65%);
-  box-shadow: inset 0 -5px 0 hsl(230, 89%, 62%);
+  box-shadow: inset 0 -6px 0 hsl(230, 89%, 62%);
 }
 
 button.rock::after {
   background-color: hsl(349, 70%, 56%);
-  box-shadow: inset 0 -5px 0 hsl(349, 71%, 52%);
+  box-shadow: inset 0 -6px 0 hsl(349, 71%, 52%);
 }
 
 button.scissors::after {
   background-color: hsl(40, 84%, 53%);
-  box-shadow: inset 0 -5px 0 hsl(39, 89%, 49%);
+  box-shadow: inset 0 -6px 0 hsl(39, 89%, 49%);
 }
 
 button[disabled] {
@@ -95,7 +96,30 @@ button[disabled] svg {
   fill: #8a8fac;
 }
 
-button.mySelection::before {
-  box-shadow: 0 0 0 28px #2b3a59, 0 0 0 56px #263554, 0 0 0 80px #202f4e;
+button.winner::before {
+  box-shadow: 2px 5px 3px black, 0 0 0 28px #2b3a59, 0 0 0 56px #263554,
+    0 0 0 80px #202f4e;
+}
+
+@media (min-width: 1024px) {
+  button {
+    box-shadow: inset 0 8px 0 #ccc;
+    height: 8rem;
+    width: 8rem;
+  }
+
+  button::after,
+  button::before {
+    height: 10rem;
+    left: -1rem;
+    top: -1rem;
+    width: 10rem;
+    box-shadow: 2px 5px 5px black;
+  }
+
+  button.winner::before {
+    box-shadow: 2px 5px 6px black, 0 0 0 72px #2b3a59, 0 0 0 135px #263554,
+      0 0 0 228px #202f4e;
+  }
 }
 </style>

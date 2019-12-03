@@ -56,6 +56,15 @@
 import Selection from "~/components/Selection.vue";
 export default {
   components: { Selection },
+  created() {
+    if (process.browser) {
+      const localStorageForm = localStorage.rps;
+      if (localStorageForm) {
+        const localStorageFormData = JSON.parse(localStorageForm);
+        this.score = localStorageFormData;
+      }
+    }
+  },
   data() {
     return {
       compareSelectionResults: "",
@@ -99,6 +108,7 @@ export default {
       if (this.compareSelectionResults == "you lose") {
         this.score -= 1;
       }
+      localStorage["rps"] = this.score;
     },
     selection(value) {
       this.mySelection = value;

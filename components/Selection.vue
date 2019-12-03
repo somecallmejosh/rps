@@ -1,5 +1,6 @@
 <template>
   <button :class="option" :disabled="state == 'disabled'">
+    <span class="visually-hidden">{{option}}</span>
     <rock v-if="option == 'rock'" />
     <paper v-if="option == 'paper'" />
     <scissors v-if="option == 'scissors'" />
@@ -79,18 +80,7 @@ button.scissors::after {
 }
 
 button[disabled] {
-  background-color: #e1e4ed;
-  box-shadow: initial;
   pointer-events: none;
-}
-
-button[disabled]::after {
-  background-color: #b9bacc;
-  box-shadow: initial;
-}
-
-button[disabled] svg {
-  fill: #8a8fac;
 }
 
 button.winner::before {

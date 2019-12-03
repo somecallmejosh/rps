@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <div>
     <header>
       <h1>
         Rock
@@ -28,6 +28,8 @@
       <div v-if="!gameOpen" class="results-grid">
         <div class="results-pick">
           <selection
+            aria-disabled="true"
+            disabled
             :option="mySelection"
             :class="{winner : compareSelectionResults == 'you win'}"
           />
@@ -39,6 +41,8 @@
         </div>
         <div class="results-pick">
           <selection
+            aria-disabled="true"
+            disabled
             :option="computerSelection"
             :class="{winner : compareSelectionResults == 'you lose'}"
           />
@@ -68,7 +72,7 @@
         </button>
       </div>
     </section>
-  </section>
+  </div>
 </template>
 
 <script>

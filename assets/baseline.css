@@ -22,3 +22,10 @@ body {
   height: 100vh;
   font-size: 62.5%;
 }
+
+button {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+}

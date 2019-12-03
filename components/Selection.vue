@@ -30,17 +30,14 @@ export default {
 <style scoped>
 button {
   align-items: center;
-  appearance: none;
   background: #fff;
   border-radius: 100%;
-  border: 0;
-  box-shadow: inset 0 6px 0 #ccc;
-  cursor: pointer;
+  box-shadow: inset 0 6px 0 #d0d6eb;
   display: inline-flex;
   height: 7rem;
   justify-content: center;
   position: relative;
-  transition: background-color 0.2s;
+  transition: all 0.2s;
   width: 7rem;
 }
 
@@ -99,11 +96,12 @@ button[disabled] svg {
 button.winner::before {
   box-shadow: 2px 5px 3px black, 0 0 0 28px #2b3a59, 0 0 0 56px #263554,
     0 0 0 80px #202f4e;
+  z-index: -5;
 }
 
 @media (min-width: 1024px) {
   button {
-    box-shadow: inset 0 8px 0 #ccc;
+    box-shadow: inset 0 8px 0 #d0d6eb;
     height: 8rem;
     width: 8rem;
   }
